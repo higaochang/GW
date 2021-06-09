@@ -16,7 +16,7 @@ public class TCPClient {
     private static final Logger log = LoggerFactory.getLogger(TCPClient.class);
     static ExecutorService executorService = Executors.newSingleThreadExecutor();
     static ExecutorService ticketGeneratorService = Executors.newSingleThreadExecutor();
-    static SynchronousQueue<Integer> ticketQueue = new SynchronousQueue<Integer>(true);
+    static SynchronousQueue<Integer> ticketQueue = new SynchronousQueue<>(true);
     int sleepDuration = 100;
     private static TCPClient ins;
     String hostname;
@@ -72,7 +72,7 @@ public class TCPClient {
     public void start() {
         ticketGeneratorService.execute(()->{
             while (true){
-                ticketQueue.offer(1);
+                ticketQueue.offer(Integer.valueOf(1));
                 try {
                     Thread.sleep(sleepDuration);
                 } catch (InterruptedException e) {
@@ -105,7 +105,7 @@ public class TCPClient {
                 }
 
             } catch (Exception e) {
-
+                log.error(e.getMessage(), e);
             }
 
         });

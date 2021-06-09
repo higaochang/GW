@@ -3,13 +3,16 @@ cd target
 java -jar GW-1.0-SNAPSHOT.jar
 
 
+
 Testing profile when rate=1000(in app.properties):
 avg = 1633306.9, 0 = 260000, 50 = 1534000, 95 = 2282000, 99 = 3789000, 100 = 49550000
 avg = 1637608.8, 0 = 258000, 50 = 1540000, 95 = 2416000, 99 = 4363000, 100 = 30082000
 avg = 1755783.3, 0 = 315000, 50 = 1692000, 95 = 2526000, 99 = 3575000, 100 = 28275000
 
-Existing issue:
-- I've tried to run the rules checking in parallel(multi-tasking), 
-however, I found if I used ExecutorService, occasionally The F message was processed early than
-D message due to threading competition, which would cause issue of more messages were forwarded
-to TCP connection. So the testing is based on single threaded rules checking.
+Testing profile updated on 09-June-2021:  
+avg = 1670388.5, 0 = 274000, 50 = 1551000, 95 = 2339000, 99 = 3856000, 100 = 60146000  
+avg = 1576778.3, 0 = 246000, 50 = 1541000, 95 = 2029000, 99 = 3053000, 100 = 23800000   
+avg = 1489254.3, 0 = 304000, 50 = 1447000, 95 = 1930000, 99 = 2786000, 100 = 34239000  
+avg = 1485816.8, 0 = 302000, 50 = 1444000, 95 = 1902000, 99 = 2828000, 100 = 19579000
+
+

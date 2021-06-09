@@ -11,15 +11,12 @@ public class Main {
         start();
     }
 
-    // read config, setup connection
     private static void init() {
         log.info("Initializing Application");
-
         TCPClient.getInstance().init();
         UDPListener.getInstance().init();
     }
 
-    // read config, setup connection
     private static void start() {
         log.info("Starting TCPClient");
         TCPClient.getInstance().start();
