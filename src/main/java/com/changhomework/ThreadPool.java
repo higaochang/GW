@@ -33,7 +33,7 @@ public class ThreadPool {
     }
 
     public void submit(final MessageFactory.Message msg) {
-        // Cancel Order Checking: cancel msg in queue, if no match outbound cancel msg
+        
         rulesThreadPool.submit(() -> {
             // 1. price checking for D
 //            long startTime = System.nanoTime();
