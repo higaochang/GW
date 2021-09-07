@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
+    // This is code change made from web VSCode
     public static void main(String[] args) {
         init();
         start();
