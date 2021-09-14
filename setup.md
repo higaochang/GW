@@ -1,4 +1,4 @@
-mvn clean install package
+mvn clean package
 cd target
 java -jar GW-1.0-SNAPSHOT.jar
 
