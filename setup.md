@@ -1,6 +1,6 @@
 mvn clean package
 cd target
-java -jar GW-1.0-SNAPSHOT.jar
+java -jar GW-1.0.0.jar
 
 
 
